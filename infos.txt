@@ -1,0 +1,11 @@
+AppID: 4ac266be-69e6-4ea6-97e8-cf13bb096c73
+
+ObjectID: 92245f6f-d22f-43f2-b015-015cce6072ca
+
+TenantID: 062096f2-76c0-4ed8-b8bf-6644178496b2
+
+SecreID: 6ff51577-2eb8-434c-977e-39ba450a6de4
+
+SecretValue: qs88Q~DVOBxW2l7Ey6n3~HYI~NfzwMsQTLRpAaQs
+
+AzureURL: https://login.microsoftonline.com/062096f2-76c0-4ed8-b8bf-6644178496b2/oauth2/v2.0/token
