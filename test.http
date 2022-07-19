@@ -1,0 +1,13 @@
+POST https://login.microsoftonline.com/062096f2-76c0-4ed8-b8bf-6644178496b2/oauth2/v2.0/token
+Content-Type: application/json
+
+{
+    "grant_type": "client_credentials",
+    "clientId": "4ac266be-69e6-4ea6-97e8-cf13bb096c73",
+    "authority": "https://login.microsoftonline.com/062096f2-76c0-4ed8-b8bf-6644178496b2/",
+    "clientSecret": "6ff51577-2eb8-434c-977e-39ba450a6de4",
+    "cloudDiscoveryMetadata": "",
+    "redirectUri": "http://localhost:3000/redirect",
+    "postLogoutRedirectUri": "http://localhost:3000/logout/",
+    "navigateToLoginRequestUrl": true,
+}

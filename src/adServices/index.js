@@ -3,6 +3,8 @@
 /** @typedef { import('./type').TazureADconfigAuth } TazureADconfigAuth */
 /** @typedef {import('express').Response} Response */
 
+const msal = require('@azure/msal-node');
+
 
 function queryRequestToJSON(query) {
     let data = {}
@@ -11,6 +13,7 @@ function queryRequestToJSON(query) {
 class CADServices {
 
     REDIRECT_URI = '';
+    /** @type {msal.ConfidentialClientApplication} */
     pca;
 
     /**
@@ -20,7 +23,6 @@ class CADServices {
      */
     constructor(REDIRECT_URI, authConfig) {
         this.REDIRECT_URI = REDIRECT_URI;
-        const msal = require('@azure/msal-node');
 
         const config = {
             auth: authConfig,
@@ -58,11 +60,29 @@ class CADServices {
         })
     }
 
-    logoff(res) {
+    /**
+     * retorna os dados do usuário logado se baseando no código gerado pelo login
+     * @param {string} code 
+     * @returns {any}
+     */
+    loginData(code) {
+        return new Promise((res, rej) => {
+            const tokenRequest = {
+                code: code,
+                scopes: ["user.read.all"],
+                redirectUri: this.REDIRECT_URI,
+            };
 
+            this.pca.acquireTokenByCode(tokenRequest).then((response) => {
+                res(response)
+            }).catch((error) => {
+                console.log(error);
+                rej(error);
+            });
+        })
     }
 
-    loginData() {
+    logoff(res) {
 
     }
 

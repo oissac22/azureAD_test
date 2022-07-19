@@ -46,11 +46,11 @@ const ADConnect = new CADServices(REDIRECT_URI, {
     // authority: "https://login.microsoftonline.com/062096f2-76c0-4ed8-b8bf-6644178496b2/oauth2/v2.0/token",
     clientSecret: "6ff51577-2eb8-434c-977e-39ba450a6de4",
     cloudDiscoveryMetadata: "",
-    redirectUri: "http://localhost:3000/redirect",
+    redirectUri: REDIRECT_URI,
     postLogoutRedirectUri: "http://localhost:3000/logout/",
     navigateToLoginRequestUrl: true,
     clientCapabilities: ["CP1"],
-    knownAuthorities: ['http://localhost:3000/'],
+    knownAuthorities: ['https://login.microsoftonline.com/062096f2-76c0-4ed8-b8bf-6644178496b2/'],
 })
 
 module.exports = ADConnect
