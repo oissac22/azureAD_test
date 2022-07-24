@@ -55,15 +55,15 @@ api.get('/redirect', async (req, res) => {
     })
 })
 
-api.get('/data', (req, res) => {
-    const code = `0.AQoA8pYgBsB22E64v2ZEF4SWsr5mwkrmaaZOl-jPE7sJbHMKAJ4.AgABAAIAAAD--DLA3VO7QrddgJg7WevrAgDs_wQA9P_64A2OI-vFudLSNRfenClYeGqnPVJmRjHw1laG82BOg2bzqNNgzN6UqLv0AFQXxICVarENxBjBWjupoiFImFGhdwFfhtNhGtu8RSNcIzUT3ea8S4rpLwdvcF_SIV3eIsDp9BmbkOB798v8XGYeXhsckY7giRqyaYG6bqTY001ugXMIBD4tNaf2haH86JjaX-VRQg-akd-5uAHJ4MhVh47jkRMuhac71o19F85bXEKNbd_4nVjv4fE8YTOPR9G53Epv9zug1Yg9XEfoVR8Fu9x-WSNVVCTJCa6iUldKhYs-3ocwNw8U9Em11EZolqExc4NtWpFzg3ltOIREWkkyNUcTGllx58j4poAzrt5Fw8hoFmSGuH4FMV6iFxGq5rNfMNMLLiSOLXHD8aW6gsg1uYgabLfiTNEHJp2mpAmcIdBlHdWyJoXahEQeA9fgoeJR1-2UEk6oonvods4G1oo48igE-nVXvzCJkSMtejnJWIbjx1uHA4U5N5rUlbjYzlreLmytxPkS55Lvl0--FxCddlWFyAgcZk8FIGwtM7Vt7lLskc-hkH7g8SQQX5cfqAwFtZVD1h8VOZ7JPsbuT7C1bqlRxJZTgkD8kZMX4vTGbEVSR7En-cfl04VIlBMY1fju9dtvIoPcor06fOUmmiLsZi8m9Ag3XKk0UCv1qxZDa3ZLLK1zLM7g6kFk4DnXXHQP_Cok2VtUaNXJjsKHt2CTlJ9wYNjOW1u4vR-4991zt-PBcdpjvRd5YwHsObxJXGPVvIgZ3-gK42ZOF_G2clWvDGTPJ-KrmJOdAN-1RBWxYsLrNsRC6S4j0gYtPmnGb2NR7oI6IFdCeKEyX1CwSF_vJsu0VHpJaLUH5-MmeAZZ3sMy-E_pP64feFrKZ8NZTkTSLXWTUoTiDJ93OE8`;
-    ADConnect.loginData(code)
-        .then((result) => {
-            res.send(result)
-        }).catch((err) => {
-            res.send(`${err}`)
-        });
-})
+// api.get('/data', (req, res) => {
+//     const code = `0.AQoA8pYgBsB22E64v2ZEF4SWsr5mwkrmaaZOl-jPE7sJbHMKAJ4.AgABAAIAAAD--DLA3VO7QrddgJg7WevrAgDs_wQA9P_64A2OI-vFudLSNRfenClYeGqnPVJmRjHw1laG82BOg2bzqNNgzN6UqLv0AFQXxICVarENxBjBWjupoiFImFGhdwFfhtNhGtu8RSNcIzUT3ea8S4rpLwdvcF_SIV3eIsDp9BmbkOB798v8XGYeXhsckY7giRqyaYG6bqTY001ugXMIBD4tNaf2haH86JjaX-VRQg-akd-5uAHJ4MhVh47jkRMuhac71o19F85bXEKNbd_4nVjv4fE8YTOPR9G53Epv9zug1Yg9XEfoVR8Fu9x-WSNVVCTJCa6iUldKhYs-3ocwNw8U9Em11EZolqExc4NtWpFzg3ltOIREWkkyNUcTGllx58j4poAzrt5Fw8hoFmSGuH4FMV6iFxGq5rNfMNMLLiSOLXHD8aW6gsg1uYgabLfiTNEHJp2mpAmcIdBlHdWyJoXahEQeA9fgoeJR1-2UEk6oonvods4G1oo48igE-nVXvzCJkSMtejnJWIbjx1uHA4U5N5rUlbjYzlreLmytxPkS55Lvl0--FxCddlWFyAgcZk8FIGwtM7Vt7lLskc-hkH7g8SQQX5cfqAwFtZVD1h8VOZ7JPsbuT7C1bqlRxJZTgkD8kZMX4vTGbEVSR7En-cfl04VIlBMY1fju9dtvIoPcor06fOUmmiLsZi8m9Ag3XKk0UCv1qxZDa3ZLLK1zLM7g6kFk4DnXXHQP_Cok2VtUaNXJjsKHt2CTlJ9wYNjOW1u4vR-4991zt-PBcdpjvRd5YwHsObxJXGPVvIgZ3-gK42ZOF_G2clWvDGTPJ-KrmJOdAN-1RBWxYsLrNsRC6S4j0gYtPmnGb2NR7oI6IFdCeKEyX1CwSF_vJsu0VHpJaLUH5-MmeAZZ3sMy-E_pP64feFrKZ8NZTkTSLXWTUoTiDJ93OE8`;
+//     ADConnect.loginData(code)
+//         .then((result) => {
+//             res.send(result)
+//         }).catch((err) => {
+//             res.send(`${err}`)
+//         });
+// })
 
 api.get('/logout', (req, res) => {
     res.send('desloged')
