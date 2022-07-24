@@ -5,6 +5,7 @@ const express = require('express');
 const path = require('path');
 const ADConnect = require('./azureAdConfig');
 const { pca } = require('./azureAdConfig');
+const cors = require('cors');
 
 const { requestSendFile } = require('./utils')
 
@@ -13,6 +14,13 @@ const { requestSendFile } = require('./utils')
 const PORT = 3000;
 
 const api = express()
+
+api.use(cors((req, callback) => {
+    callback(null, {
+        origin: true,
+        credentials: true
+    })
+}))
 
 api.get('/test', (req, res) => {
     res.send('test ok')

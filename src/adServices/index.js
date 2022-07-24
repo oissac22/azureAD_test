@@ -19,11 +19,12 @@ class CADServices {
     /**
      * classe de administração de login do azure AD
      * @param {string} REDIRECT_URI
-     * @param {TazureADconfigAuth} authConfig
+     * @param {msal.NodeAuthOptions & {validateAuthority?:boolean}} authConfig
      */
     constructor(REDIRECT_URI, authConfig) {
         this.REDIRECT_URI = REDIRECT_URI;
 
+        /** @type {msal.Configuration} */
         const config = {
             auth: authConfig,
             system: {
@@ -47,7 +48,7 @@ class CADServices {
     login() {
         return new Promise((res, rej) => {
             const authCodeUrlParameters = {
-                scopes: ["user.read"],
+                scopes: ["User.Read"],
                 redirectUri: this.REDIRECT_URI,
             };
 
@@ -69,9 +70,11 @@ class CADServices {
         return new Promise((res, rej) => {
             const tokenRequest = {
                 code: code,
-                scopes: ["user.read.all"],
+                scopes: [],
                 redirectUri: this.REDIRECT_URI,
             };
+
+            console.log('tokenRequest :>> ', tokenRequest);
 
             this.pca.acquireTokenByCode(tokenRequest).then((response) => {
                 res(response)
