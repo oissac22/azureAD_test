@@ -6,23 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <script type="text/javascript">
-        const data = [dataSession];
-        console.log('data :>> ', data);
-        const data2 = [dataDetails];
-        console.log('data2 :>> ', data2);
-    </script>
-
 </head>
 
 <body>
+    <div>
+        <a href='/logoff'>LOGOFF</a>
+        <a href='/data' target="_blank" id="urlData">DATA</a>
+    </div>
     <textarea style="width: 100%; height: 400px;">
         [dataSession]
     </textarea>
     <textarea style="width: 100%; height: 400px;">
         [dataDetails]
     </textarea>
+
+    <script type="text/javascript" defer>
+        const data = [dataSession];
+        console.log('data :>> ', data);
+        const data2 = [dataDetails];
+        console.log('data2 :>> ', data2);
+        document.getElementById('urlData').href = '/data?key=' + data.key;
+    </script>
+
 </body>
 
 </html>

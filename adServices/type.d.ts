@@ -1,4 +1,8 @@
-import { Response } from "express";
+/*
+    Por Cássio da Silva Carneiro
+    oissac22@hotmail.com
+    dbc.cassio@unimedpoa.com.br
+*/
 
 export type TCodesStatesADServices = {
     code: string,
@@ -24,4 +28,28 @@ export type TazureADconfigAuth = {
     clientCapabilities?: ("CP1" | string)[],
     /** Exemplo: ['http://localhost:3000/'] */
     knownAuthorities: string[],
+}
+
+export type TLoginProp = {
+    urlRedirect?: string,
+    minutesExpires: number
+}
+
+export type TMemoryLogin = {
+    [key: string]: {
+        data: any,
+        dateExpire: Date,
+        key: string
+    }
+}
+
+export type TReturnLoginData = {
+    data: {
+        winResponse: string,
+        response: string,
+        dataResponse: any,
+        userData: any,
+        urlRedirect: string
+    },
+    dateExpire: Date
 }

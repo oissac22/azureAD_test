@@ -1,2 +1,0 @@
-POST https://login.microsoftonline.com/9eb04dee-e30c-49b8-8d66-1fb1929449d5/oauth2/v2.0/token
-Content-Type: application/json
