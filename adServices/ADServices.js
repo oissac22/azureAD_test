@@ -20,6 +20,7 @@ const LOGOUT_URL = `https://login.microsoftonline.com/common/oauth2/v2.0/logout?
  * @returns {{[key:string]:any}} retorna um objeto
  */
 function urlRequestToQueryData(query) {
+    /** @type {{[key:string]:any}} */
     let data = {};
     if (!/\?/.test(query)) return data;
     query
